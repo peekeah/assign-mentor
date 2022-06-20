@@ -5,6 +5,7 @@ const studentSchema = new Schema({
     student_name: {type: 'string', required: [true, "student name is required"]},
     student_age: 'number',
     student_city: 'string',
+    mentor: 'string'
 });
 
 const studentModel = mongoose.model("student", studentSchema);

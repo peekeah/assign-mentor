@@ -1,7 +1,11 @@
-const express = require('express');
-const { createStudent } = require('../modules/studentModule');
+const express = require("express");
+const { createStudent, getStudents, getStudent } = require("../modules/studentModule");
+const { assignMentorModule } = require("../modules/assignMentorModule");
 const router = express.Router();
 
-router.post('/create', createStudent);
+router.get("/", getStudents)
+router.get("/:id", getStudent)
+router.post("/create", createStudent);
+router.patch("/assign-mentor/:id", assignMentorModule);
 
 module.exports = router;

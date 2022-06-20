@@ -11,3 +11,6 @@ Assign Mentor API
 
 /student/assign-mentor/:id - To assign mentor to student
 /mentor/assign-student/:id - To assign students to mentor
+
+#Postman JSON link for API documentation
+https://www.postman.com/collections/8697ba542a2dbddbb97e

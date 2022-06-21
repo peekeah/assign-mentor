@@ -8,7 +8,7 @@ module.exports.assignStudents = async (req, res) => {
         const mentor = await mentorModel.findById(req.params.id);
         let data;
         if(mentor.assigned_students){
-            data = mentor.assigned_students.concat(students);
+            data = [...new Set(mentor.assigned_students.concat(students))];
         } else {
             data=[...students];
         }

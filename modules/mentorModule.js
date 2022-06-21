@@ -1,5 +1,6 @@
 const mentorModel = require('../models/mentorSchema');
 
+//Getting list of all mentors
 exports.getMentors = async (req, res) => {
     try {
         const mentors = await mentorModel.find({});
@@ -10,6 +11,7 @@ exports.getMentors = async (req, res) => {
     }
 }
 
+//Getting mentor by id
 exports.getMentor = async (req, res) => {
     try {
         const mentor = await mentorModel.findById(req.params.id);
@@ -20,6 +22,7 @@ exports.getMentor = async (req, res) => {
     }
 }
 
+//Creating mentor
 module.exports.createMentor = async (req, res) => {
     try {
         const body = {...req.body};

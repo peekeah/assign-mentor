@@ -15,7 +15,7 @@ module.exports.assignMentorModule = async (req, res) => {
       assignedStudents = mentor.assigned_students;
     }
     assignedStudents.push(student.student_name);
-    mentor["assigned_students"] = assignedStudents;
+    mentor["assigned_students"] = [...new Set(assignedStudents)];
     mentor.save();
     await res.send(student);
   } catch (err) {
